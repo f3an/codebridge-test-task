@@ -3,17 +3,12 @@ import { Box } from '@mui/system'
 import { News } from '../../../types'
 import { useGetTrendingNewsQuery } from '../../store/services/newsApi'
 import { Results } from './Results'
-import { Search } from './Search'
 import { Card } from '../Card/Card'
+import { Search } from '../Search/Search'
 
 export const MainPage: React.FC = () => {
   const { data, isLoading } = useGetTrendingNewsQuery({ country: 'us' })
-
-  if (!isLoading && data) {
-    data.articles.map((news) => {
-      console.log(news)
-    })
-  }
+  
   return (
     <Box sx={{ paddingY: '50px', paddingX: '75px' }}>
       <Search />

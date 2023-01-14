@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/dist/query/react'
-import { NewsList } from './types'
+import { NewsList } from '../../../types'
 
 const apiKey = process.env.REACT_APP_NEWS_API_KEY || 'Api Key'
 
@@ -12,7 +12,13 @@ export const newsApi = createApi({
         return `top-headlines?country=${country}&apiKey=${apiKey}`
       },
     }),
+    search: builder.query<NewsList, { query: string }>({
+      query: ({ query }) => {
+        return `everything?q=${atob(query)}&apiKey=${apiKey}`
+      },
+    }),
   }),
 })
 
 export const { useGetTrendingNewsQuery } = newsApi
+export const { useSearchQuery } = newsApi
