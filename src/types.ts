@@ -3,13 +3,14 @@ export type News = {
   title: string
   content: string
   description: string
-  publishedAt: Date
+  publishedAt: string
   source: Source
   url: string
   urlToImage: string
 }
 
 export type Source = {
+  id: string
   name: string
 }
 
