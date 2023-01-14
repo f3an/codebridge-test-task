@@ -1,4 +1,5 @@
 import { styled, TextField, Typography } from '@mui/material'
+import { Box } from '@mui/system'
 
 export const StyledTextField = styled(TextField)`
   background: #fff;
@@ -34,6 +35,22 @@ export const StyledTypography = styled(Typography)`
   /* identical to box height */
 
   color: #363636;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+`
+
+export const StyledBoxCard = styled(Box)`
+  width: 400px;
+  height: 530px;
+
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
 
   /* Inside auto layout */
 
