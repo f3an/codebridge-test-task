@@ -8,6 +8,7 @@ Used technologies:
   - Material UI + CSS preprocessors for the style app
   - Redux for state management
   - RTK request for data
+  - react-highlight-words to esly highlight keywords
 
 <div align="center">
   <img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original-wordmark.svg" title="React" alt="React" width="40"         height="40"/>&nbsp;
