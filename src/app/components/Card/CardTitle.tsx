@@ -15,7 +15,6 @@ export const CardTitle: React.FC<Props> = ({ newsData }) => {
         fontWeight: '400',
         lineHeight: '29px',
         marginY: '20px',
-        height: '60px',
       }}
     >
       <Highlighter

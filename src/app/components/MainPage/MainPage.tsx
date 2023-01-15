@@ -8,7 +8,7 @@ import { Search } from '../Search/Search'
 
 export const MainPage: React.FC = () => {
   const { data, isLoading } = useGetTrendingNewsQuery({ country: 'us' })
-
+  
   return (
     <Box sx={{ paddingY: '50px', paddingX: '75px' }}>
       <Search />

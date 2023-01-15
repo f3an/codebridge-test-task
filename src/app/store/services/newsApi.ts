@@ -7,17 +7,17 @@ export const newsApi = createApi({
   endpoints: (builder) => ({
     getTrendingNews: builder.query({
       query: () => {
-        return '/blogs?_limit=21'
+        return '/articles?_limit=21'
       },
     }),
     search: builder.query<NewsList, { query: string }>({
       query: ({ query }) => {
-        return `/blogs?title_contains=${atob(query)}`
+        return `/articles?_limit=21&_sort=id&summary_contains=${atob(query)}`
       },
     }),
     getNewsById: builder.query<NewsList, { query: number }>({
       query: ({ query }) => {
-        return `/blogs/${query}`
+        return `/articles/${query}`
       },
     }),
   }),
