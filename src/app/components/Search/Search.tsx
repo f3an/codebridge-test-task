@@ -19,7 +19,7 @@ export const Search: React.FC = () => {
       searchRef.current.value !== ''
     ) {
       dispatch(changeSearchRequest(btoa(searchRef.current.value)))
-      navigate(`/search/${btoa(searchRef.current.value)}`)
+      navigate(`/${btoa(searchRef.current.value)}`)
       searchRef.current.value = ''
     } else if (searchRef.current) {
       navigate('/')
@@ -45,7 +45,16 @@ export const Search: React.FC = () => {
         >
           <img src={SearchIcon} alt='searchIcon' width='20px' />
         </IconButton>
-        <StyledTextField fullWidth placeholder='Search...' inputRef={searchRef}></StyledTextField>
+        <StyledTextField
+          fullWidth
+          placeholder='Search...'
+          inputRef={searchRef}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              handleClick()
+            }
+          }}
+        ></StyledTextField>
       </Box>
     </Box>
   )

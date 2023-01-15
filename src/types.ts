@@ -1,21 +1,13 @@
 export type News = {
-  author: string
-  title: string
-  content: string
-  description: string
+  id: number
+  imageUrl: string
+  launches: number[]
+  newsSite: string
   publishedAt: string
-  source: Source
+  summary: string
+  title: string
+  updatedAt: string
   url: string
-  urlToImage: string
 }
 
-export type Source = {
-  id: string
-  name: string
-}
-
-export type NewsList = {
-  status: string
-  totalResults: number
-  articles: News[]
-}
+export type NewsList = News[]

@@ -28,8 +28,8 @@ export const SearchPage: React.FC = () => {
 
       <Box sx={{ display: 'flex', gap: '45px', flexWrap: 'wrap', justifyContent: 'center' }}>
         {!isLoading && data
-          ? data.articles.map((News: News, key = 0) => <Card newsData={News} key={key} />)
-          : ''}
+          ? data.map((News: News, key = 0) => <Card newsData={News} key={key} />)
+          : 'Loading...'}
       </Box>
     </Box>
   )
