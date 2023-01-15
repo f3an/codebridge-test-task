@@ -63,7 +63,6 @@ export const StyledNewsBlock = styled(Box)`
   position: absolute;
   width: 90%;
   height: 90%;
-  left: 75px;
   top: 150px;
   display: flex;
   flex-direction: column;
