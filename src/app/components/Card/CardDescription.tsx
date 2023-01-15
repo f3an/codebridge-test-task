@@ -1,36 +1,34 @@
 import { Box } from '@mui/system'
 import React from 'react'
+import Highlighter from 'react-highlight-words'
 import { News } from '../../../types'
+import { useAppSelector } from '../../hooks/storeHooks'
+import { selectSearchRequest } from '../../store/storeSlices/searchSlice'
 import { StyledTypography } from '../../styles/styledComponents'
 
 export const CardDescription: React.FC<Props> = ({ newsData }) => {
+  const searchRequest = atob(useAppSelector(selectSearchRequest)).split(' ')
+  const description = getDescription(newsData)
+
   return (
     <Box>
-      <StyledTypography
-        sx={{ fontSize: '24px', fontWeight: '400', lineHeight: '29px', marginY: '20px' }}
-      >
-        {getTitle(newsData)}
-      </StyledTypography>
-
       <StyledTypography sx={{ marginBottom: '20px', fontWeight: 400, lineHeight: '24px' }}>
-        {getDescription(newsData)}
+        <Highlighter
+          searchWords={searchRequest}
+          autoEscape={true}
+          textToHighlight={description}
+          highlightStyle={{ backgroundColor: '#fff619a1' }}
+        />
       </StyledTypography>
     </Box>
   )
 }
 
-const getTitle = (newsData: News) => {
-  if (newsData.title.length > 37) {
-    return `${newsData.title.split('-')[0].slice(0, 37)}...`
-  }
-  return newsData.title
-}
-
 const getDescription = (newsData: News) => {
-  if (newsData.description && newsData.description.length > 139) {
-    return `${newsData.description.slice(0, 139)}...`
+  if (newsData.summary && newsData.summary.length > 100) {
+    return `${newsData.summary.slice(0, 100)}...`
   }
-  return newsData.description
+  return newsData.summary
 }
 
 type Props = {

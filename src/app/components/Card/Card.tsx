@@ -5,14 +5,20 @@ import { News } from '../../../types'
 import { StyledBoxCard, StyledTypography } from '../../styles/styledComponents'
 import { PublishDate } from './PublishDate'
 import Arrow from '../../assets/Arrow.svg'
+import ImageNotFound from '../../assets/notFoundImg.jpeg'
 import { CardDescription } from './CardDescription'
+import { CardTitle } from './CardTitle'
 
 export const Card: React.FC<Props> = ({ newsData }) => {
+
   return (
-    <Link to={`/news/${newsData.title}`} style={{ textDecoration: 'none', color: '#363636' }}>
+    <Link
+      to={`/news/${newsData.id}`}
+      style={{ textDecoration: 'none', color: '#363636' }}
+    >
       <StyledBoxCard>
         <img
-          src={newsData.urlToImage}
+          src={newsData.imageUrl ? newsData.imageUrl : ImageNotFound}
           style={{
             height: '217px',
             width: '400px',
@@ -31,6 +37,7 @@ export const Card: React.FC<Props> = ({ newsData }) => {
           }}
         >
           <PublishDate publishedAt={newsData.publishedAt} />
+          <CardTitle newsData={newsData} />
           <CardDescription newsData={newsData} />
 
           <StyledTypography
