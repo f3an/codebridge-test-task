@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Box } from '@mui/system'
 import { News } from '../../../types'
 import { useGetTrendingNewsQuery } from '../../store/services/newsApi'
 import { Results } from './Results'
 import { Card } from '../Card/Card'
 import { Search } from '../Search/Search'
+import { useDispatch } from 'react-redux'
+import { changeSearchRequest } from '../../store/storeSlices/searchSlice'
 
 export const MainPage: React.FC = () => {
   const { data, isLoading } = useGetTrendingNewsQuery({ country: 'us' })
-  
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(changeSearchRequest(''))
+  }, [dispatch])
+
   return (
     <Box sx={{ paddingY: '50px', paddingX: '75px' }}>
       <Search />
