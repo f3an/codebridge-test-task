@@ -58,3 +58,19 @@ export const StyledBoxCard = styled(Box)`
   order: 0;
   flex-grow: 0;
 `
+
+export const StyledNewsBlock = styled(Box)`
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  left: 75px;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+`
