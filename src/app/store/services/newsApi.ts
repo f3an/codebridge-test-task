@@ -12,7 +12,7 @@ export const newsApi = createApi({
     }),
     search: builder.query<NewsList, { query: string }>({
       query: ({ query }) => {
-        return `/articles?_limit=21&_sort=id&summary_contains=${atob(query)}`
+        return `/articles?_limit=100&=${atob(query)}&summary_contains=${atob(query).split(' ')[0]}`
       },
     }),
     getNewsById: builder.query<NewsList, { query: number }>({
