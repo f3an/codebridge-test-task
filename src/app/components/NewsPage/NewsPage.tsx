@@ -24,15 +24,7 @@ export const NewsPage: React.FC = () => {
   }, [NewsId, dispatch, location])
 
   return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        minWidth: '100%',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-      }}
-    >
+    <Box sx={{ height: '100%', padding: '50px', display: 'flex', justifyContent: 'center' }}>
       <Box
         sx={{
           position: 'absolute',
@@ -40,20 +32,14 @@ export const NewsPage: React.FC = () => {
           height: '245px',
           left: 0,
           top: 0,
-          background: `no-repeat url(${!isLoading && data.imageUrl ? data.imageUrl : ''}), #C4C4C4`,
+          background: `no-repeat url(${!isLoading ? data.imageUrl : ''}), #C4C4C4`,
           backgroundSize: 'cover',
         }}
       ></Box>
 
       <StyledNewsBlock>
         <StyledTypography
-          sx={{
-            marginTop: '35px',
-            fontWeight: 400,
-            fontSize: '24px',
-            lineHeight: '29px',
-            textAlign: 'center',
-          }}
+          sx={{ marginTop: '35px', fontWeight: 400, fontSize: '24px', lineHeight: '29px' }}
         >
           {!isLoading ? data.title : ''}
         </StyledTypography>
@@ -61,53 +47,18 @@ export const NewsPage: React.FC = () => {
         <Box sx={{ paddingX: '75px', paddingY: '50px' }}>
           <StyledTypography sx={{ fontWeight: 400, fontSize: '18px', lineHeight: '24px' }}>
             {!isLoading ? data.summary : ''}
-            <p>
-              The 2020 Worlds Most Valuable Brands Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Interdum ornare convallis non etiam tincidunt tincidunt. Non dolor
-              vel purus id. Blandit habitasse volutpat id dolor pretium, sem iaculis. Faucibus
-              commodo mauris enim, turpis blandit. Porttitor facilisi viverra mi lacus lacinia
-              accumsan. Pellentesque gravida ligula bibendum aliquet nulla massa elit. Ac faucibus
-              donec sit morbi pharetra urna. Vel facilisis amet placerat ultrices lobortis proin
-              nulla. Molestie tellus sed pellentesque tortor vitae eu cras nisl. Sem facilisi amet
-              vitae ultrices nullam tellus. Pellentesque eget iaculis morbi at quis eget lacus,
-              aliquam etiam. Neque ipsum, placerat vel convallis nulla orci, nunc etiam.
-            </p>
-            <p>
-              Elementum risus facilisi mauris diam amet et sed. At aliquet id amet, viverra a magna
-              lorem urna. Nibh scelerisque quam quam massa amet, sollicitudin vel non. Gravida
-              laoreet neque tincidunt eu egestas massa vitae nibh. Nec ullamcorper amet tortor,
-              velit. Dictum pellentesque dolor sit duis sed nibh. Euismod rutrum pellentesque semper
-              mattis aliquet ornare.
-            </p>
-            <p>
-              The 2020 Worlds Most Valuable Brands Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Interdum ornare convallis non etiam tincidunt tincidunt. Non dolor
-              vel purus id. Blandit habitasse volutpat id dolor pretium, sem iaculis. Faucibus
-              commodo mauris enim, turpis blandit. Porttitor facilisi viverra mi lacus lacinia
-              accumsan. Pellentesque gravida ligula bibendum aliquet nulla massa elit. Ac faucibus
-              donec sit morbi pharetra urna. Vel facilisis amet placerat ultrices lobortis proin
-              nulla. Molestie tellus sed pellentesque tortor vitae eu cras nisl. Sem facilisi amet
-              vitae ultrices nullam tellus. Pellentesque eget iaculis morbi at quis eget lacus,
-              aliquam etiam. Neque ipsum, placerat vel convallis nulla orci, nunc etiam.
-            </p>
-            <p>
-              Elementum risus facilisi mauris diam amet et sed. At aliquet id amet, viverra a magna
-              lorem urna. Nibh scelerisque quam quam massa amet, sollicitudin vel non. Gravida
-              laoreet neque tincidunt eu egestas massa vitae nibh. Nec ullamcorper amet tortor,
-              velit. Dictum pellentesque dolor sit duis sed nibh. Euismod rutrum pellentesque semper
-              mattis aliquet ornare.
-            </p>
           </StyledTypography>
         </Box>
       </StyledNewsBlock>
 
       <Box
         sx={{
-          marginLeft: '168px',
-          marginY: '35px',
+          marginTop: '35px',
+          position: 'absolute',
           width: '180px',
           height: '24px',
-          alignSelf: 'flex-start',
+          left: '168px',
+          bottom: 0,
         }}
       >
         <Link to='/' style={{ textDecoration: 'none' }}>

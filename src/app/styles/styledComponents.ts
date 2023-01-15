@@ -60,9 +60,13 @@ export const StyledBoxCard = styled(Box)`
 `
 
 export const StyledNewsBlock = styled(Box)`
-  z-index: 1;
-  margin-top: 150px;
+  position: absolute;
   width: 90%;
+  height: 90%;
+  top: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   background: #ffffff;
   border: 1px solid #eaeaea;
