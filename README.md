@@ -20,3 +20,5 @@ Used technologies:
   Link: 
   
   [![Netlify Status](https://api.netlify.com/api/v1/badges/cf89cdee-be74-4e8f-82a8-949955613031/deploy-status)](https://codebridge-test-task-f3an.netlify.app)
+
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/1ad54e4b45994078bc03e1268d35dbf0)](https://www.codacy.com/gh/f3an/codebridge-test-task/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=f3an/codebridge-test-task&amp;utm_campaign=Badge_Grade)
